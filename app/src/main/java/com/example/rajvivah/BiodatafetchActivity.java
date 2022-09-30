@@ -48,7 +48,7 @@ public class BiodatafetchActivity extends AppCompatActivity {
                 public void onResponse(Call<List<Biodatafetchmodel>> call, Response<List<Biodatafetchmodel>> response) {
 
                     try {
-
+//
                         biodatafetchmodelList = new ArrayList<Biodatafetchmodel>();
                         biodatafetchmodelList.addAll(response.body());
                         String[] profiledetails = new String[biodatafetchmodelList.size()];
