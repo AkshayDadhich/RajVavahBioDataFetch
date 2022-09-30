@@ -46,7 +46,7 @@ public class BiodatafetchActivity extends AppCompatActivity {
             userList.enqueue(new Callback<List<Biodatafetchmodel>>() {
                 @Override
                 public void onResponse(Call<List<Biodatafetchmodel>> call, Response<List<Biodatafetchmodel>> response) {
-
+//
                     try {
 //
                         biodatafetchmodelList = new ArrayList<Biodatafetchmodel>();
