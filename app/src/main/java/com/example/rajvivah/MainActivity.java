@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //===============================
-        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
-        names= mPrefs.getString("name", "");
-        regid = mPrefs.getString("regis", "");
-        /*logOutB=findViewById(R.id.logOutB);*/
+//        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
+//        names= mPrefs.getString("name", "");
+//        regid = mPrefs.getString("regis", "");
+
 
        // Toast.makeText(MainActivity.this, "Main activity :-  " +regid+names, Toast.LENGTH_SHORT).show();
 
@@ -71,13 +71,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         //Fragment Part start here
         getuserprofileDetails();
-
-      /*  logOutB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertMessage("Logout Button","You Clicked on it");
-            }
-        });*/
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

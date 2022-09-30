@@ -30,13 +30,13 @@ public class LoadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
         getSupportActionBar().hide();
-      //  runningviononapp = getString(R.string.app_runningversion);
-      //  checkapplatestVersion();
+        runningviononapp = getString(R.string.app_runningversion);
+        checkapplatestVersion();
         Intent mainIntent = null;
-        mainIntent = new Intent(LoadActivity.this, BiodatafetchActivity.class);
-        startActivity(mainIntent);
+//        mainIntent = new Intent(LoadActivity.this, BiodatafetchActivity.class);
+//        startActivity(mainIntent);
        // finish();
-       /* new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
@@ -48,7 +48,7 @@ public class LoadActivity extends AppCompatActivity {
                     if (latestverion.equals(runningviononapp)) {
                         if (check) {
                             // registration activity
-                            mainIntent = new Intent(LoadActivity.this, LoginActivity.class);
+                            mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                             startActivity(mainIntent);
                             finish();
                         } else {
@@ -105,7 +105,7 @@ public class LoadActivity extends AppCompatActivity {
             }
 
 
-        }, SPLASH_DISPLAY_LENGTH);*/
+        }, SPLASH_DISPLAY_LENGTH);
     }
 
     private void alertMessage(String altitle, String almessage) {
