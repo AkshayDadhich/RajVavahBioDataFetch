@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">दहेज विरोधी क्षत्रिय संघ</string>
+    <string name="pfirstName">प्रथम नाम</string>
+    <string name="plastName">उपनाम</string>
+    <string name="info_mother_name">माता का नाम</string>
+    <string name="info_father_name">"पिता का नाम "</string>
+    <string name="rajput_dropdown">राजपूत</string>
+    <string name="address">पता</string>
+    <string name="enter_personal_information">व्यक्तिगत जानकारी दर्ज करें</string>
+    <string name="village_name">" गांव का नाम"</string>
+    <string name="colony_ward_name">" कॉलोनी/वार्ड का नाम"</string>
+    <string name="your_highest_qualification">" आपकी सर्वोच्च योग्यता"</string>
+    <string name="what_is_your_profession">" आपका पेशा क्या है"</string>
+    <string name="enter_your_profession_details">"अपने पेशे का विवरण दर्ज करें "</string>
+    <string name="collage_name">"महाविद्यालय का नाम "</string>
+    <string name="your_subjects_in_graduation">" स्नातक में आपके विषय"</string>
+</resources>

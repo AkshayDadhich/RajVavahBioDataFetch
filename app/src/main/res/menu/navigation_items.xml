@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/nav_icon_profile"/>
+    <item
+        android:id="@+id/nav_matches"
+        android:title="Matches"
+        android:icon="@drawable/nav_icon_matches"/>
+
+    <item
+        android:id="@+id/placeHolder"
+        />
+    <item
+        android:id="@+id/nav_chat"
+        android:title="Chat"
+        android:icon="@drawable/nav_icon_chat"/>
+    <item
+        android:id="@+id/nav_notifications"
+        android:title="Notifications"
+        android:icon="@drawable/nav_icon_notifications"/>
+
+</menu>

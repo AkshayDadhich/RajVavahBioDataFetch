@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BiodataregistrationActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"
+      >
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/videocamerab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/imagecamera" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardvieloc"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="100dp">
+
+      <pl.droidsonroids.gif.GifImageView
+          android:id="@+id/imageView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="centerCrop"
+          android:src="@drawable/dahejlogo" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/imgbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="100dp"
+        android:src="@drawable/imagecamera" />
+  </LinearLayout>
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+
+        android:orientation="vertical"
+        android:padding="25dp">
+      <com.google.android.material.textfield.TextInputLayout
+
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          android:hint="Name *"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+         >
+
+        <EditText
+            android:id="@+id/edname"
+            android:maxLength="10"
+            android:inputType="textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <RadioGroup
+          android:id="@+id/radioGroup"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:weightSum="2"
+          app:strokeColor="@color/black"
+          android:orientation="horizontal">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="Male" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="Female" />
+
+      </RadioGroup>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edfathername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Father Name*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edmothername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Mother Name*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_mob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="phone_number*"
+            android:maxLength="12"
+            android:inputType="number"
+            android:maxLines="1"
+            android:ems="10"
+             />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.card.MaterialCardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:strokeWidth="1dp"
+          app:strokeColor="@color/black"
+          android:layout_marginTop="4dp"
+          app:cardCornerRadius="4dp">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spnselectcandidaterajput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"/>
+
+      </com.google.android.material.card.MaterialCardView>
+
+      <com.google.android.material.card.MaterialCardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:strokeWidth="1dp"
+          android:layout_marginTop="4dp"
+          app:strokeColor="@color/black"
+          app:cardCornerRadius="4dp">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spnselectcandidategotra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:padding="4dp"/>
+
+      </com.google.android.material.card.MaterialCardView>
+
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Address*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Post*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_teh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Tehsil*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_dist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="District*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edcandidate_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="State*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edlasteducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Last Education*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edlasteducation_edu_per"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Percentage*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edlasteducation_edu_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Subject/Stream*" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edjob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Job Details" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="12dp"
+          app:endIconMode="custom"
+          app:endIconTint="@color/LightBlue"
+          app:startIconCheckable="true"
+          >
+
+        <EditText
+            android:id="@+id/edjob_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="Job Department" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+       android:weightSum="2">
+      <Button
+          android:id="@+id/btnpost"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:padding="10dp"
+          android:layout_margin="2dp"
+          android:layout_weight="1"
+          android:text="Save" />
+      <Button
+          android:id="@+id/btncancel"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:padding="10dp"
+          android:layout_weight="1"
+          android:layout_margin="2dp"
+          android:text="Cancel" />
+     </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

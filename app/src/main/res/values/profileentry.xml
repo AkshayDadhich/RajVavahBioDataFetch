@@ -1,0 +1,10 @@
+<resources>
+    <string name="pfirstName">First Name</string>
+    <string name="plastName">Last Name</string>
+<!--    <string name="pfatherName">Father's Name</string>-->
+<!--    <string name="pmotherName">Mother's Name</string>-->
+<!--    <string name="pgrandFatherName">Grand Father's Name</string>-->
+<!--    <string name="pgrandMotherName">Grand Mother's Name</string>-->
+<!--    <string name="pNaniName">Nani Sa Name</string>-->
+<!--    <string name="pNanaName">Nano Sa Name</string>-->
+</resources>
