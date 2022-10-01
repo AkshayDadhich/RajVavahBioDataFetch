@@ -136,11 +136,16 @@ public class LoginActivity extends AppCompatActivity {
                             lmessage = loginmodel.get(0).getMessage();
                             if (isallValid && lmessage.equals("usrlogsucess")) {
                                 //========================
-                                SharedPreferences mPrefs = getSharedPreferences("IDvalue", Context.MODE_MULTI_PROCESS);
-                                SharedPreferences.Editor editor = mPrefs.edit();
-                                editor.putString("name", loginmodel.get(0).getName().toString());
-                                editor.putString("regis", loginmodel.get(0).getRegisteruser_id().toString());
-                                editor.commit();
+//                                SharedPreferences mPrefs = getSharedPreferences("IDvalue", Context.MODE_MULTI_PROCESS);
+//                                SharedPreferences.Editor editor = mPrefs.edit();
+//                                editor.putString("name", loginmodel.get(0).getName().toString());
+//                                editor.putString("regis", loginmodel.get(0).getRegisteruser_id().toString());
+//                                editor.commit();
+
+                                SharedPreferences preferences =  getSharedPreferences("login", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putBoolean("flag", true);
+                                editor.apply();
 
                                 //===========================
                                 String i = loginmodel.get(0).getRegisteruser_id().toString();
