@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
-import com.example.rajvivah.DisplayCardView;
 import com.example.rajvivah.R;
 
 public class GetEducationInfo extends AppCompatActivity {
@@ -88,8 +87,7 @@ public class GetEducationInfo extends AppCompatActivity {
         save1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GetEducationInfo.this, DisplayCardView.class);
-                startActivity(intent);
+
             }
         });
 

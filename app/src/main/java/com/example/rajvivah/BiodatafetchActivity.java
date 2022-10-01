@@ -1,18 +1,14 @@
 package com.example.rajvivah;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.rajvivah.modal.Biodatafetchmodel;
-import com.example.rajvivah.modal.Loginmodel;
 import com.example.rajvivah.webapi.Apiclient;
 
 import java.util.ArrayList;
@@ -42,7 +38,7 @@ public class BiodatafetchActivity extends AppCompatActivity {
             dialog = ProgressDialog.show(
                     BiodatafetchActivity.this, "", "Please wait...");
             dialog.dismiss();
-            Call<List<Biodatafetchmodel>> userList = Apiclient.getUserservice().fetchallbioData();
+            Call<List<Biodatafetchmodel>> userList = Apiclient.getUserservice().fetchallbioData(1,10);
             userList.enqueue(new Callback<List<Biodatafetchmodel>>() {
                 @Override
                 public void onResponse(Call<List<Biodatafetchmodel>> call, Response<List<Biodatafetchmodel>> response) {

@@ -1,43 +1,25 @@
 package com.example.rajvivah;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
-import android.content.ClipData;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
-
 import com.example.rajvivah.modal.RegistrationModel;
 import com.example.rajvivah.webapi.Apiclient;
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -90,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(new ProfileFragment(), false);
 
                 } else if (id == R.id.nav_matches) {
-                    loadFragment(new MatchesFragment(), false);
+                    loadFragment(new Biodatadisplayfragment(), false);
                 } else if (id == R.id.nav_chat) {
                     loadFragment(new ChatFragment(), false);
                 } else if (id == R.id.nav_notifications) {
                     loadFragment(new NotificationsFragment(), false);
                 } else
-                    loadFragment(new MatchesFragment(), true);
+                    loadFragment(new ProfileFragment(), true);
 
 
                 return true;
