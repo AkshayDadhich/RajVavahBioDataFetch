@@ -43,6 +43,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".BiodatadisplayActivity"
+            android:exported="false" />
+        <activity
             android:name=".BiodatafetchActivity"
             android:exported="false" />
         <activity
@@ -69,12 +72,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Card_Recycler_View"
-            android:exported="false" />
-        <activity
-            android:name=".DisplayCardView"
-            android:exported="false" />
         <activity
             android:name=".registration.GetEducationInfo"
             android:exported="false" />

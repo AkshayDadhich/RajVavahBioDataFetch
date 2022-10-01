@@ -1,14 +1,11 @@
 package com.example.rajvivah;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.rajvivah.modal.Responseversioncheck;
 import com.example.rajvivah.webapi.Apiclient;
@@ -32,10 +29,10 @@ public class LoadActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         runningviononapp = getString(R.string.app_runningversion);
         checkapplatestVersion();
-        Intent mainIntent = null;
-//        mainIntent = new Intent(LoadActivity.this, BiodatafetchActivity.class);
-//        startActivity(mainIntent);
-       // finish();
+        Intent mainIntent = null;       
+        mainIntent = new Intent(LoadActivity.this, BiodatafetchActivity.class);
+        startActivity(mainIntent);
+        finish();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
