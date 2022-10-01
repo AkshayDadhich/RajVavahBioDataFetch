@@ -58,4 +58,7 @@ dependencies {
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
     implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'androidx.biometric:biometric:1.0.1'
+
+
 }
