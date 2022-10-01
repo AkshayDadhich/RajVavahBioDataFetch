@@ -3,7 +3,9 @@ package com.example.rajvivah;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,11 +31,11 @@ public class LoadActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         runningviononapp = getString(R.string.app_runningversion);
         checkapplatestVersion();
-        Intent mainIntent = null;       
-        mainIntent = new Intent(LoadActivity.this, BiodatafetchActivity.class);
+        Intent mainIntent = null;
+      /* mainIntent = new Intent(LoadActivity.this, BiodatadisplayActivity.class);
         startActivity(mainIntent);
-        finish();
-        new Handler().postDelayed(new Runnable() {
+     finish();*/
+       new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 

@@ -1,7 +1,5 @@
 package com.example.rajvivah;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,8 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.rajvivah.modal.RegistrationModel;
-import com.example.rajvivah.uservice.vivahAPIGetRegistration;
 import com.example.rajvivah.webapi.Apiclient;
 
 import java.util.ArrayList;
@@ -20,8 +19,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ActivityEditProfile extends AppCompatActivity {
     EditText et_userName1,et_father_name,et_mobile, et_mother_name, et_cast, et_gotra,
@@ -73,6 +70,7 @@ public class ActivityEditProfile extends AppCompatActivity {
         tv_usernameEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                cls();
                 et_userName1.setFocusable(true);
             }
         });
@@ -102,7 +100,24 @@ public class ActivityEditProfile extends AppCompatActivity {
             }
         });
     }
+public void cls()
+{
 
+    //===============================
+    SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
+
+    mPrefs.edit().clear().commit();
+    names= mPrefs.getString("name", "");
+
+
+
+
+    //=======================================
+
+
+    Toast.makeText(ActivityEditProfile.this, "clear :-  " + names, Toast.LENGTH_SHORT).show();
+
+}
     public void getuserprofileDetails() {
         Call<List<RegistrationModel>> userList = Apiclient.getUserservice().getuserProfile(regid.toString());
         userList.enqueue(new Callback<List<RegistrationModel>>() {

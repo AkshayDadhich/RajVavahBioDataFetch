@@ -1,7 +1,5 @@
 package com.example.rajvivah;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -10,13 +8,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.rajvivah.modal.Loginmodel;
 import com.example.rajvivah.webapi.Apiclient;
@@ -41,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     List<Loginmodel> loginmodel;
     String lmessage;
     SharedPreferences sharedpreferences;
-    String email, passwords;
+    String names, regid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +53,18 @@ public class LoginActivity extends AppCompatActivity {
         register = (TextView) findViewById(R.id.register);
         phoneerr = (TextInputLayout) findViewById(R.id.phoneerr);
         passError = (TextInputLayout) findViewById(R.id.passError);
+       //===============================================
+
+        //===============================
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
+        names= mPrefs.getString("name", null);
+        regid = mPrefs.getString("regis", null);
+
+
+
+        //=======================================
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,16 +145,12 @@ public class LoginActivity extends AppCompatActivity {
                             lmessage = loginmodel.get(0).getMessage();
                             if (isallValid && lmessage.equals("usrlogsucess")) {
                                 //========================
-//                                SharedPreferences mPrefs = getSharedPreferences("IDvalue", Context.MODE_MULTI_PROCESS);
-//                                SharedPreferences.Editor editor = mPrefs.edit();
-//                                editor.putString("name", loginmodel.get(0).getName().toString());
-//                                editor.putString("regis", loginmodel.get(0).getRegisteruser_id().toString());
-//                                editor.commit();
+                                SharedPreferences mPrefs = getSharedPreferences("IDvalue", Context.MODE_MULTI_PROCESS);
+                               SharedPreferences.Editor editor = mPrefs.edit();
+                                editor.putString("name", loginmodel.get(0).getName().toString());
+                                editor.putString("regis", loginmodel.get(0).getRegisteruser_id().toString());
+                                editor.commit();
 
-                                SharedPreferences preferences =  getSharedPreferences("login", MODE_PRIVATE);
-                                SharedPreferences.Editor editor = preferences.edit();
-                                editor.putBoolean("flag", true);
-                                editor.apply();
 
                                 //===========================
                                 String i = loginmodel.get(0).getRegisteruser_id().toString();
@@ -191,19 +196,15 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
             dialog.dismiss();
         }
-
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
-        if (email != null && password != null) {
+        if (names != null && regid != null) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
         }
     }
-
     private void alerttwoButton(String m) {
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setMessage("You are not registred. Do you want\n to Register?" + m);

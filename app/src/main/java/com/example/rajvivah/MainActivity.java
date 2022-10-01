@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //===============================
-//        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
-//        names= mPrefs.getString("name", "");
-//        regid = mPrefs.getString("regis", "");
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
+        names= mPrefs.getString("name", "");
+        regid = mPrefs.getString("regis", "");
 
 
        // Toast.makeText(MainActivity.this, "Main activity :-  " +regid+names, Toast.LENGTH_SHORT).show();
@@ -94,32 +94,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getuserprofileDetails() {
-        Call<List<RegistrationModel>> userList = Apiclient.getUserservice().getuserProfile(regid);
-        userList.enqueue(new Callback<List<RegistrationModel>>() {
-            @Override
-            public void onResponse(Call<List<RegistrationModel>> call, Response<List<RegistrationModel>> response) {
-                registrationModelList = new ArrayList<>();
-                registrationModelList.addAll(response.body());
-                // String[] profiledetails = new String[registrationModelList.size()];
-                if (response.isSuccessful()) {
-                    for (int i = 0; i < registrationModelList.size(); i++) {
-                        //       profiledetails[i] = (i+1) +"  " +registrationModelList.get(i).getName();
-                        //MainActivity.this.tv_username.setText(registrationModelList.get(i).getName().toString());
-                        //  Toast.makeText(MainActivity.this, "Main activity :-  " +registrationModelList.get(i).getName().toString(), Toast.LENGTH_SHORT).show();
+        try {
+            Call<List<RegistrationModel>> userList = Apiclient.getUserservice().getuserProfile(regid);
+            userList.enqueue(new Callback<List<RegistrationModel>>() {
+                @Override
+                public void onResponse(Call<List<RegistrationModel>> call, Response<List<RegistrationModel>> response) {
+                    registrationModelList = new ArrayList<>();
+                    registrationModelList.addAll(response.body());
+                    // String[] profiledetails = new String[registrationModelList.size()];
+                    if (response.isSuccessful()) {
+                        for (int i = 0; i < registrationModelList.size(); i++) {
+                            //       profiledetails[i] = (i+1) +"  " +registrationModelList.get(i).getName();
+                            //MainActivity.this.tv_username.setText(registrationModelList.get(i).getName().toString());
+                            //  Toast.makeText(MainActivity.this, "Main activity :-  " +registrationModelList.get(i).getName().toString(), Toast.LENGTH_SHORT).show();
 
+                        }
+
+                        // Log.e("sucesspppp", response.body().toString());
+                        // Toast.makeText(Registeroffence.this, "Data " +response.toString(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Toast.makeText(MainActivity.this, "Data not added", Toast.LENGTH_SHORT).show();
                     }
-
-                   // Log.e("sucesspppp", response.body().toString());
-                    // Toast.makeText(Registeroffence.this, "Data " +response.toString(), Toast.LENGTH_SHORT).show();
-                } else {
-                    // Toast.makeText(MainActivity.this, "Data not added", Toast.LENGTH_SHORT).show();
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<RegistrationModel>> call, Throwable t) {
-            }
-        });
+                @Override
+                public void onFailure(Call<List<RegistrationModel>> call, Throwable t) {
+                }
+            });
+        }
+        catch (Exception ex){}
+
     }
     private void alertMessage(String altitle, String almessage) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
