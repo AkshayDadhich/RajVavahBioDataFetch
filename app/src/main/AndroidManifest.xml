@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.rajvivah">
 
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
@@ -42,6 +43,9 @@
         android:theme="@style/Theme.RajVivah"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity_Biomatrix"
+            android:exported="false" />
         <activity
             android:name=".BiodatadisplayActivity"
             android:exported="false" />

@@ -92,106 +92,21 @@ public class Biodatafetchmodel {
     int candidate_son,  register_uid,   candidate_daughter;
     Boolean dahejoth,  ismanglik;
 
-    public Biodatafetchmodel(String name, String fathername, String mothername, String path) {
-        this.name = name;
-        this.fathername = fathername;
-        this.mothername = mothername;
-        this.path = path;
-    }
 
-    public Biodatafetchmodel(String registeruser_id, String name, String fathername, String mothername, String grandfathername, String candidate_cast, String candidate_gotra, String reg_can_username, String registeruser_mob, String candidate_mob, String candidate_mail, String candidate_address, String candidate_post, String candidate_teh, String candidate_dist, String candidate_state, String candidate_country, String candidate_polstation, String candidate_pin, String candidate_name_of_fatherinlaw, String candidate_cast_of_fatherinlaw, String candidate_gotra_of_fatherinlaw, String candidate_address_of_fatherinlaw, String candidate_post_of_fatherinlaw, String candidate_teh_of_fatherinlaw, String candidate_polstation_of_fatherinlaw, String candidate_dist_of_fatherinlaw, String candidate_state_of_fatherinlaw, String candidate_country_of_fatherinlaw, String candidate_pin_of_fatherinlaw, String candidate_name_of_nanosa, String candidate_cast_of_nanihal, String candidate_gotra_of_nanihal, String candidate_address_of_nanihal, String candidate_post_of_nanihal, String candidate_teh_of_nanihal, String candidate_polstation_of_nanihal, String candidate_dist_of_nanihal, String candidate_state_of_nanihal, String candidate_country_of_nanihal, String candidate_pin_of_nanihal, String candidate_name_of_dadera, String candidate_cast_of_dadera, String candidate_gotra_of_dadera, String candidate_address_of_dadera, String candidate_post_of_dadera, String candidate_teh_of_dadera, String candidate_polstation_of_dadera, String candidate_dist_of_dadera, String candidate_state_of_dadera, String candidate_country_of_dadera, String candidate_pin_of_dadera, String tenth_board, String tenth_per, String twelth_board, String tenth_sub, String twelth_per, String gradu_uni, String gradu_sub, String gradu_per, String pg_uni, String pg_sub, String pg_per, String other_edu, String other_edu_per, String other_edu_sub, String job, String job_department, String job_from, String image, String dahejoth_descrip, String brother, String sister, String married, String son, String daughter, String marriedchild, String path, String gender_self, String refrencename, String refrencenamE_MOB, String regbyId, String updatemode, String lasteducation, String lasteducation_edu_per, String lasteducation_edu_sub, int candidate_son, int register_uid, int candidate_daughter, Boolean dahejoth, Boolean ismanglik) {
-        this.registeruser_id = registeruser_id;
+    public Biodatafetchmodel(String name, String fathername, String mothername, String candidate_cast, String candidate_gotra, String registeruser_mob, String candidate_mob, String candidate_address, String path, String gender_self) {
         this.name = name;
         this.fathername = fathername;
         this.mothername = mothername;
-        this.grandfathername = grandfathername;
         this.candidate_cast = candidate_cast;
         this.candidate_gotra = candidate_gotra;
-        this.reg_can_username = reg_can_username;
         this.registeruser_mob = registeruser_mob;
         this.candidate_mob = candidate_mob;
-        this.candidate_mail = candidate_mail;
         this.candidate_address = candidate_address;
-        this.candidate_post = candidate_post;
-        this.candidate_teh = candidate_teh;
-        this.candidate_dist = candidate_dist;
-        this.candidate_state = candidate_state;
-        this.candidate_country = candidate_country;
-        this.candidate_polstation = candidate_polstation;
-        this.candidate_pin = candidate_pin;
-        this.candidate_name_of_fatherinlaw = candidate_name_of_fatherinlaw;
-        this.candidate_cast_of_fatherinlaw = candidate_cast_of_fatherinlaw;
-        this.candidate_gotra_of_fatherinlaw = candidate_gotra_of_fatherinlaw;
-        this.candidate_address_of_fatherinlaw = candidate_address_of_fatherinlaw;
-        this.candidate_post_of_fatherinlaw = candidate_post_of_fatherinlaw;
-        this.candidate_teh_of_fatherinlaw = candidate_teh_of_fatherinlaw;
-        this.candidate_polstation_of_fatherinlaw = candidate_polstation_of_fatherinlaw;
-        this.candidate_dist_of_fatherinlaw = candidate_dist_of_fatherinlaw;
-        this.candidate_state_of_fatherinlaw = candidate_state_of_fatherinlaw;
-        this.candidate_country_of_fatherinlaw = candidate_country_of_fatherinlaw;
-        this.candidate_pin_of_fatherinlaw = candidate_pin_of_fatherinlaw;
-        this.candidate_name_of_nanosa = candidate_name_of_nanosa;
-        this.candidate_cast_of_nanihal = candidate_cast_of_nanihal;
-        this.candidate_gotra_of_nanihal = candidate_gotra_of_nanihal;
-        this.candidate_address_of_nanihal = candidate_address_of_nanihal;
-        this.candidate_post_of_nanihal = candidate_post_of_nanihal;
-        this.candidate_teh_of_nanihal = candidate_teh_of_nanihal;
-        this.candidate_polstation_of_nanihal = candidate_polstation_of_nanihal;
-        this.candidate_dist_of_nanihal = candidate_dist_of_nanihal;
-        this.candidate_state_of_nanihal = candidate_state_of_nanihal;
-        this.candidate_country_of_nanihal = candidate_country_of_nanihal;
-        this.candidate_pin_of_nanihal = candidate_pin_of_nanihal;
-        this.candidate_name_of_dadera = candidate_name_of_dadera;
-        this.candidate_cast_of_dadera = candidate_cast_of_dadera;
-        this.candidate_gotra_of_dadera = candidate_gotra_of_dadera;
-        this.candidate_address_of_dadera = candidate_address_of_dadera;
-        this.candidate_post_of_dadera = candidate_post_of_dadera;
-        this.candidate_teh_of_dadera = candidate_teh_of_dadera;
-        this.candidate_polstation_of_dadera = candidate_polstation_of_dadera;
-        this.candidate_dist_of_dadera = candidate_dist_of_dadera;
-        this.candidate_state_of_dadera = candidate_state_of_dadera;
-        this.candidate_country_of_dadera = candidate_country_of_dadera;
-        this.candidate_pin_of_dadera = candidate_pin_of_dadera;
-        this.tenth_board = tenth_board;
-        this.tenth_per = tenth_per;
-        this.twelth_board = twelth_board;
-        this.tenth_sub = tenth_sub;
-        this.twelth_per = twelth_per;
-        this.gradu_uni = gradu_uni;
-        this.gradu_sub = gradu_sub;
-        this.gradu_per = gradu_per;
-        this.pg_uni = pg_uni;
-        this.pg_sub = pg_sub;
-        this.pg_per = pg_per;
-        this.other_edu = other_edu;
-        this.other_edu_per = other_edu_per;
-        this.other_edu_sub = other_edu_sub;
-        this.job = job;
-        this.job_department = job_department;
-        this.job_from = job_from;
-        this.image = image;
-        this.dahejoth_descrip = dahejoth_descrip;
-        this.brother = brother;
-        this.sister = sister;
-        this.married = married;
-        this.son = son;
-        this.daughter = daughter;
-        this.marriedchild = marriedchild;
         this.path = path;
         this.gender_self = gender_self;
-        this.refrencename = refrencename;
-        this.refrencenamE_MOB = refrencenamE_MOB;
-        this.regbyId = regbyId;
-        this.updatemode = updatemode;
-        this.lasteducation = lasteducation;
-        this.lasteducation_edu_per = lasteducation_edu_per;
-        this.lasteducation_edu_sub = lasteducation_edu_sub;
-        this.candidate_son = candidate_son;
-        this.register_uid = register_uid;
-        this.candidate_daughter = candidate_daughter;
-        this.dahejoth = dahejoth;
-        this.ismanglik = ismanglik;
     }
+
+
 
     public String getRegisteruser_id() {
         return registeruser_id;
