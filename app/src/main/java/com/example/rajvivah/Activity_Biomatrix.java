@@ -23,7 +23,7 @@ public class Activity_Biomatrix extends AppCompatActivity {
 
         // Initialising msgtext and loginbutton
         TextView msgtex = findViewById(R.id.msgtext);
-        final Button loginbutton = findViewById(R.id.login);
+        final Button loginbutton = findViewById(R.id.loginf);
 
         // creating a variable for our BiometricManager
         // and lets check if our user can use biometric sensor or not
@@ -77,7 +77,7 @@ public class Activity_Biomatrix extends AppCompatActivity {
         });
         // creating a variable for our promptInfo
         // BIOMETRIC DIALOG
-        final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder().setTitle("GFG")
+        final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder().setTitle("Welcome-DahejVirodhi Kshatriya Sangh")
                 .setDescription("Use your fingerprint to login ").setNegativeButtonText("Cancel").build();
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,5 +86,7 @@ public class Activity_Biomatrix extends AppCompatActivity {
 
             }
         });
+
+
     }
 }

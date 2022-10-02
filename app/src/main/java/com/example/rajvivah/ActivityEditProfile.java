@@ -1,12 +1,12 @@
 package com.example.rajvivah;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,18 +21,19 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityEditProfile extends AppCompatActivity {
-    EditText et_userName1,et_father_name,et_mobile, et_mother_name, et_cast, et_gotra,
-            et_address, et_village, et_city, ev_candidate_district,et_pincode, et_state;
+    EditText et_userName1, et_father_name, et_mobile, et_mother_name, et_cast, et_gotra,
+            et_address, et_village, et_city, ev_candidate_district, et_pincode, et_state;
     TextView tv_usernameEdit, tv_EditPersonalInfo, tv_CastInfo, tv_EditAddress;
     List<RegistrationModel> registrationModelList;
-    String regid="",names="";
+    String regid = "", names = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         //===============================
-        SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
-        names= mPrefs.getString("name", "");
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue", MODE_PRIVATE);
+        names = mPrefs.getString("name", "");
         regid = mPrefs.getString("regis", "");
 
         //==============================
@@ -46,7 +47,7 @@ public class ActivityEditProfile extends AppCompatActivity {
         et_address = findViewById(R.id.et_address);
         et_village = findViewById(R.id.et_village);
         et_city = findViewById(R.id.et_city);
-        ev_candidate_district=findViewById(R.id.evviewcandidatedistrict);
+        ev_candidate_district = findViewById(R.id.evviewcandidatedistrict);
         et_pincode = findViewById(R.id.et_pincode);
         et_state = findViewById(R.id.et_state);
 
@@ -70,8 +71,12 @@ public class ActivityEditProfile extends AppCompatActivity {
         tv_usernameEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cls();
+
                 et_userName1.setFocusable(true);
+                Intent mainIntent = null;
+                mainIntent = new Intent(ActivityEditProfile.this, BiodatadisplayActivity.class);
+                startActivity(mainIntent);
+                finish();
             }
         });
         tv_EditPersonalInfo.setOnClickListener(new View.OnClickListener() {
@@ -100,24 +105,8 @@ public class ActivityEditProfile extends AppCompatActivity {
             }
         });
     }
-public void cls()
-{
-
-    //===============================
-    SharedPreferences mPrefs = getSharedPreferences("IDvalue",MODE_PRIVATE);
-
-    mPrefs.edit().clear().commit();
-    names= mPrefs.getString("name", "");
 
 
-
-
-    //=======================================
-
-
-    Toast.makeText(ActivityEditProfile.this, "clear :-  " + names, Toast.LENGTH_SHORT).show();
-
-}
     public void getuserprofileDetails() {
         Call<List<RegistrationModel>> userList = Apiclient.getUserservice().getuserProfile(regid.toString());
         userList.enqueue(new Callback<List<RegistrationModel>>() {
@@ -125,10 +114,10 @@ public void cls()
             public void onResponse(Call<List<RegistrationModel>> call, Response<List<RegistrationModel>> response) {
                 registrationModelList = new ArrayList<>();
                 registrationModelList.addAll(response.body());
-               // String[] profiledetails = new String[registrationModelList.size()];
+                // String[] profiledetails = new String[registrationModelList.size()];
                 if (response.isSuccessful()) {
                     for (int i = 0; i < registrationModelList.size(); i++) {
-                 //       profiledetails[i] = (i+1) +"  " +registrationModelList.get(i).getName();
+                        //       profiledetails[i] = (i+1) +"  " +registrationModelList.get(i).getName();
                         et_userName1.setText(registrationModelList.get(i).getName());
                         et_father_name.setText(registrationModelList.get(i).getFathername());
                         et_mobile.setText(registrationModelList.get(i).getRegisteruser_mob());
@@ -141,16 +130,17 @@ public void cls()
                         ev_candidate_district.setText(registrationModelList.get(i).getCandidate_dist());
                         et_state.setText(registrationModelList.get(i).getCandidate_state());
                         et_pincode.setText(registrationModelList.get(i).getCandidate_pin());
-                      //  Toast.makeText(ActivityEditProfile.this, "Data " +registrationModelList.get(i).getName().toString(), Toast.LENGTH_SHORT).show();
+                        //  Toast.makeText(ActivityEditProfile.this, "Data " +registrationModelList.get(i).getName().toString(), Toast.LENGTH_SHORT).show();
 
                     }
 
                     Log.e("sucesspppp", response.body().toString());
                     // Toast.makeText(Registeroffence.this, "Data " +response.toString(), Toast.LENGTH_SHORT).show();
                 } else {
-                   // Toast.makeText(ActivityEditProfile.this, "Data not added", Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(ActivityEditProfile.this, "Data not added", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onFailure(Call<List<RegistrationModel>> call, Throwable t) {
             }

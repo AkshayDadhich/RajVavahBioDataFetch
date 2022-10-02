@@ -4,30 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+android:background="@color/vivah"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Activity_Biomatrix">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GFG | First App"
-        android:textColor="#fafafa"
-        android:textSize="30dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Use your fingerprint to login"
-        android:textColor="#fafafa"
-        android:textSize="18sp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
-        android:src="@drawable/ic_fingerprint_black_24dp" />
 
     <TextView
         android:id="@+id/msgtext"
@@ -37,7 +19,7 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"

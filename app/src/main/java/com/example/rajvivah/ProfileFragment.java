@@ -24,7 +24,7 @@ public class ProfileFragment extends Fragment {
     Button dobBtn;
     TextView birthTime;
     Button birthtime_button, btn_edit_profile;
-
+    String names,regid;
     int day, month, year, hour, minute;
     int myday, myMonth, myYear, myHour, myMinute;
     private Button save;
@@ -60,13 +60,15 @@ public class ProfileFragment extends Fragment {
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferences = getActivity().getSharedPreferences("login", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
 
-                editor.putBoolean("flag", false);
-                editor.apply();
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
+                SharedPreferences mPrefs = ProfileFragment.this.getActivity().getSharedPreferences("IDvalue", MODE_PRIVATE);
+                mPrefs.edit().clear().commit();
+                names = mPrefs.getString("name", "");
+                regid = mPrefs.getString("regis", "");
+                Intent i = new Intent(ProfileFragment.this.getContext(), LoginActivity.class);
+                startActivity(i);
+                //Toast.makeText(ProfileFragment.this.getContext(), "Logout clicked :-  " , Toast.LENGTH_SHORT).show();
+
             }
         });
 

@@ -28,8 +28,9 @@ public class BiodatadisplayActivity extends AppCompatActivity {
     private Biodatafetchadapter biodatafetchadapter;
     private ProgressBar loadingPB;
     private NestedScrollView nestedSV;
-    int pagefrom=1, pageto=100;
+    int pagefrom = 1, pageto = 100;
     List<Biodatafetchmodel> biodatafetchmodelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +48,9 @@ public class BiodatadisplayActivity extends AppCompatActivity {
                 if (scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()) {
                     count++;
                     loadingPB.setVisibility(View.VISIBLE);
-                    if (count <=20) {
-                         pagefrom+=20;
-                         pageto+=20;
+                    if (count <= 100) {
+                        pagefrom += 100;
+                        pageto += 100;
                         biodatafetchFunction();
                     }
                 }
@@ -57,10 +58,17 @@ public class BiodatadisplayActivity extends AppCompatActivity {
         });
     }
 
+    public static String removefirstChar(String str) {
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+        return str.substring(1);
+    }
+
     public void biodatafetchFunction() {
         try {
             courseRV.setVisibility(View.VISIBLE);
-            Call<List<Biodatafetchmodel>> userList = Apiclient.getUserservice().fetchallbioData(pagefrom,pageto);
+            Call<List<Biodatafetchmodel>> userList = Apiclient.getUserservice().fetchallbioData(pagefrom, pageto);
             userList.enqueue(new Callback<List<Biodatafetchmodel>>() {
                 @Override
                 public void onResponse(Call<List<Biodatafetchmodel>> call, Response<List<Biodatafetchmodel>> response) {
@@ -70,15 +78,36 @@ public class BiodatadisplayActivity extends AppCompatActivity {
                         biodatafetchmodelList.addAll(response.body());
                         String[] profiledetails = new String[biodatafetchmodelList.size()];
                         if (response.isSuccessful()) {
-                            for (int i = 0; i < 10; i++) {
-                               // profiledetails[i] = biodatafetchmodelList.get(i).getName();
-                                String name =  profiledetails[i];
-                                String fathername = biodatafetchmodelList.get(i).getFathername();
-                                String mobile = biodatafetchmodelList.get(i).getCandidate_mob();
-                                String path =biodatafetchmodelList.get(i).getPath();
-                                courseArrayList.add(new Biodatafetchmodel(name, fathername, mobile,path));
+                            for (int i = 0; i < biodatafetchmodelList.size(); i++) {
+                                // profiledetails[i] = biodatafetchmodelList.get(i).getName();registeruser_id
+                                String name, gender, candidatedob, candidatecast, candidategotra, candidatefather, candidatemother, candidatemobile , candidateaddress;
+                                name ="# "+ biodatafetchmodelList.get(i).getRegisteruser_id()+" \nName : "+ biodatafetchmodelList.get(i).getName();
+                                gender ="Gender : "+ biodatafetchmodelList.get(i).getGender_self();
+                              //  candidatedob = biodatafetchmodelList.get(i).getFathername();
+                                candidatecast ="Rajput : "+ biodatafetchmodelList.get(i).getCandidate_cast();
+                                candidategotra ="Gotra : "+ biodatafetchmodelList.get(i).getCandidate_gotra();
+                                candidatefather ="Fahter : "+ biodatafetchmodelList.get(i).getFathername();
+                                candidatemother ="Mother : "+ biodatafetchmodelList.get(i).getMothername();
+                                candidatemobile = "Mobile : " +biodatafetchmodelList.get(i).getCandidate_mob();
+                                candidateaddress ="Address : " + biodatafetchmodelList.get(i).getCandidate_address()+" , "+
+                                        biodatafetchmodelList.get(i).getCandidate_post()+" , "+  biodatafetchmodelList.get(i).getCandidate_teh()+
+                                " , "+ biodatafetchmodelList.get(i).getCandidate_dist()+" ,\n "+  biodatafetchmodelList.get(i).getCandidate_state();
+                                String path = "https://dahejvirodhi.com" + (removefirstChar(biodatafetchmodelList.get(i).getPath()));
+
+                              /*  courseArrayList.add(new Biodatafetchmodel(
+                                        name,name , name,
+                                        name, name,  name, name, name, path,name));
+*/
+
+
+                                courseArrayList.add(new Biodatafetchmodel(
+                                        name,candidatefather , candidatemother,
+                                        candidatecast, candidategotra,  candidatemobile, candidatemobile, candidateaddress, path,gender));
+
                                 biodatafetchadapter = new Biodatafetchadapter(BiodatadisplayActivity.this, courseArrayList);
                                 courseRV.setAdapter(biodatafetchadapter);
+
+                                //System.out.println(removefirstChar(str));
 
                             }
                         }
